@@ -55,13 +55,15 @@ python test.py -p path/to/test/image
 ```
 Replace path/to/test/image with the path to your test image.
 
-<img src="test_image/Bougainvillea2.jpg" width="250" height="376">        <img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376">
 
+
+<img src="test_image/Bougainvillea2.jpg" width="250" height="376">&nbsp;&nbsp;&nbsp;<img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376">
+
+Bougainvillea is predicted class and 99.93% is confidence score
 
 ## Requirements
 - Python 
 - PyTorch
-- torchvision
 - scikit-learn
-- tqdm
-- OpenCV
+- PIL or cv2
+- tensorboard
