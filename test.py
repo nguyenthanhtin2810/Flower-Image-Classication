@@ -6,7 +6,7 @@ from PIL import Image
 from torchvision.transforms import Compose, Resize, ToTensor
 
 def get_args():
-    parser = ArgumentParser(description="CNN inference")
+    parser = ArgumentParser(description="Testing")
     parser.add_argument("--image-path", "-p", type=str, default=None)
     parser.add_argument("--image-size", "-i", type=int, default=224)
     parser.add_argument("--checkpoint", "-c", type=str, default="trained_models/best_model.pt")
