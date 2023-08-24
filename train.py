@@ -4,7 +4,7 @@ from models import SimpleCNN
 from torch.utils.data import DataLoader
 import torch.nn as nn
 from sklearn.metrics import accuracy_score
-from torchvision.transforms import Compose, Resize, ToTensor, RandomAffine, ColorJitter, ToPILImage
+from torchvision.transforms import Compose, Resize, ToTensor, RandomAffine, ColorJitter
 from argparse import ArgumentParser
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
