@@ -49,7 +49,7 @@ Loss/iteration in training & Accuracy/epoch in validation
 <img src="tensorboard/tensorboard_screenshot.PNG" width="993.6" height="689.6">
 
 ## Testing
-You can test the model by running the following command:
+You can test the model with images in **test_image** by running the following command:
 ```
 python test.py -p path/to/test/image
 ```
