@@ -53,7 +53,7 @@ You can test the model by running the following command:
 ```
 python test.py -p path/to/test/image
 ```
-Replace path/to/flower/dataset with the path to your test image.
+Replace path/to/test/image with the path to your test image.
 
 <img src="test_image/Bougainvillea2.jpg" width="250" height="376">        <img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376">
 
