@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 from models import SimpleCNN
 import torch
 import torch.nn.functional as F
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from torchvision.transforms import Compose, Resize, ToTensor
 
 def get_args():
