@@ -14,7 +14,7 @@ import cv2
 import numpy as np
 
 def get_args():
-    parser = ArgumentParser(description="CNN training")
+    parser = ArgumentParser(description="Training")
     parser.add_argument("--root", "-r", type=str, default="flowers")
     parser.add_argument("--epochs", "-e", type=int, default=100)
     parser.add_argument("--batch_size", "-b", type=int, default=8)
