@@ -7,8 +7,6 @@
 ## Introduction
 This project is an implementation of a simple Convolutional Neural Network (CNN) for classifying 10 different types of flowers.
 
-It uses PyTorch for the deep learning framework and a publicly available dataset of flower images.
-
 <img src="test_image/predicted_Hydrangeas1.jpg" width="275" height="183"><img src="test_image/predicted_Tulips2.jpg" width="301" height="167">
 
 <img src="test_image/predicted_Orchids1.jpg" width="275" height="183"><img src="test_image/predicted_Daisies2.jpg" width="275" height="183">
