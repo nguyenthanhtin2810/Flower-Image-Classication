@@ -2,12 +2,14 @@
 <p align="center">
  <h1 align="center">Flower-Image-Classication</h1>
 </p>
-<img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376"><img src="test_image/predicted_Hydrangeas1.jpg" width="275" height="183"><img src="test_image/predicted_Tulips2.jpg" width="301" height="167">
+
 
 ## Introduction
 This project is an implementation of a simple Convolutional Neural Network (CNN) for classifying 10 different types of flowers.
 
 It uses PyTorch for the deep learning framework and a publicly available dataset of flower images.
+
+<img src="test_image/predicted_Hydrangeas1.jpg" width="275" height="183"><img src="test_image/predicted_Tulips2.jpg" width="301" height="167"><img src="test_image/predicted_Orchids1.jpg" width="275" height="183">
 
 ## Data
 Data used for this project consists of images of 10 different types of flowers. You can find it at <a href="https://www.kaggle.com/datasets/aksha05/flower-image-dataset">this link</a>
@@ -37,6 +39,9 @@ After training, the model's accuracy on the test set will be displayed, and the 
 
 ## Trained Models
 You can find trained models I have trained in <a href="https://drive.google.com/drive/folders/12zUspjpC2t8SNh4J9NLfrtcVFPCkItJm?usp=sharing">this link</a>
+
+## Experiments
+I have trained in 100 epochs
 
 ## Requirements
 - Python 
