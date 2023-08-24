@@ -28,7 +28,7 @@ Data used for this project consists of images of 10 different types of flowers. 
 I have processed that data so that it can be used for model training in **dataset.py**
 
 ## Model
-We use a simple CNN architecture for image classification. The model architecture is defined in the **models.py** file.
+I use a simple CNN architecture for image classification. The model architecture is defined in the **models.py** file.
 
 ## Training
 You can train the model by running the following command:
