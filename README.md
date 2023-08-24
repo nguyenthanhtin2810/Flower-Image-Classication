@@ -2,6 +2,7 @@
 <p align="center">
  <h1 align="center">Flower-Image-Classication</h1>
 </p>
+<img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376"><img src="test_image/predicted_Hydrangeas1.jpg" width="275" height="183"><img src="test_image/predicted_Tulips2.jpg" width="301" height="167">
 
 ## Introduction
 This project is an implementation of a simple Convolutional Neural Network (CNN) for classifying 10 different types of flowers.
