@@ -43,9 +43,9 @@ After training, the model's accuracy on the test set will be displayed, and the 
 You can find trained models I have trained in <a href="https://drive.google.com/drive/folders/12zUspjpC2t8SNh4J9NLfrtcVFPCkItJm?usp=sharing">this link</a>
 
 ## Experiments
-I trained the model for 100 epochs and the best model of arccuracy is 0.8027210884353742
+I trained the model for 100 epochs an the best model of arccuracy is 0.8027210884353742
 
-Loss/iteration in training & Accuracy/epoch in validation
+Loss/iteration during training & Accuracy/epoch during validation
 <img src="tensorboard/tensorboard_screenshot.PNG" width="993.6" height="689.6">
 
 ## Testing
@@ -54,7 +54,6 @@ You can test the model with images in **test_image** by running the following co
 python test.py -p path/to/test/image
 ```
 Replace path/to/test/image with the path to your test image.
-
 
 
 <img src="test_image/Bougainvillea2.jpg" width="250" height="376">&nbsp;&nbsp;&nbsp;<img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376">
