@@ -49,4 +49,26 @@ if __name__ == '__main__':
     predicted_class = categories[predicted.item()]
     confidence = torch.max(probs).item()
     print(f"The test image is about {predicted_class} with confident score of {confidence*100:.2f}%")
+
+    draw = ImageDraw.Draw(ori_image)
+
+    width, height = ori_image.size
+    x = int(width * 0.01)
+    y = int(height * 0.01)
+
+    text = f"{predicted_class} ({confidence*100:.2f})"
+    text_color = (255, 255, 255)
+
+    font_size = int(min(width, height) * 0.1)
+    font = ImageFont.truetype("C:\Windows\Fonts/arial.ttf", font_size)
+
+    x, y, text_width, text_height = draw.textbbox((x, y), text, font=font)
+    background_for_text = (x, y, x + text_width, y + text_height)
+    background_color = (0, 0, 124)
+    draw.rectangle(background_for_text, fill=background_color)
+
+    draw.text((x, y), text=text, font=font, fill=text_color)
+
+    image_filename = args.image_path.split("\\")[2]
+    ori_image.save(f"test_image/predicted_{image_filename}")
     ori_image.show()
