@@ -33,7 +33,7 @@ You can train the model by running the following command:
 ```
 python train.py -r path/to/flower/dataset
 ```
-Replace path/to/flower/dataset with the path to your flower dataset. The script supports various arguments for customization, such as batch size, number of epochs, image size, and more.
+Replace path/to/flower/dataset with the path to your flower dataset.
 
 After training, the model's accuracy on the test set will be displayed, and the best model (**best_model.pt**) will be saved in the **trained_models** directory.
 
