@@ -52,6 +52,7 @@ You can test the model with images in **test_image** by running the following co
 python test.py -p path/to/test/image
 ```
 Replace path/to/test/image with the path to your test image.
+### Result
 
 
 <img src="test_image/Bougainvillea2.jpg" width="250" height="376">&nbsp;&nbsp;&nbsp;<img src="test_image/predicted_Bougainvillea2.jpg" width="250" height="376">
