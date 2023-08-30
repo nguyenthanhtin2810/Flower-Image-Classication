@@ -1,17 +1,15 @@
 import torch.optim
 from dataset import FlowerDataset
-from models import SimpleCNN
+from models import PretrainResNet50
 from torch.utils.data import DataLoader
 import torch.nn as nn
 from sklearn.metrics import accuracy_score
-from torchvision.transforms import Compose, Resize, ToTensor, RandomAffine, ColorJitter
+from torchvision.transforms import Compose, Resize, ToTensor, RandomAffine, ColorJitter, Normalize
 from argparse import ArgumentParser
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
 import os
 import shutil
-import cv2
-import numpy as np
 
 def get_args():
     parser = ArgumentParser(description="Training")
@@ -46,14 +44,9 @@ if __name__ == '__main__':
         ),
         Resize((args.image_size, args.image_size)),
         ToTensor(),
+        Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     train_dataset = FlowerDataset(args.root, train=True, transform=train_transform)
-
-    # image, _ = train_dataset.__getitem__(300)
-    # image_numpy = (image * 255).byte().numpy()
-    # image_cv2 = cv2.cvtColor(image_numpy.transpose(1, 2, 0), cv2.COLOR_RGB2BGR)
-    # cv2.imshow("test image", image_cv2)
-    # cv2.waitKey(0)
 
     train_dataloader = DataLoader(
         dataset=train_dataset,
@@ -66,6 +59,7 @@ if __name__ == '__main__':
     test_transform = Compose([
         Resize((args.image_size, args.image_size)),
         ToTensor(),
+        Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
     test_dataset = FlowerDataset(args.root, train=False, transform=test_transform)
     test_dataloader = DataLoader(
@@ -79,7 +73,7 @@ if __name__ == '__main__':
     if not os.path.isdir(args.trained_models):
         os.mkdir(args.trained_models)
     writer = SummaryWriter(args.logging)
-    model = SimpleCNN(num_classes=10).to(device)
+    model = PretrainResNet50(num_classes=10).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)
 
@@ -136,14 +130,12 @@ if __name__ == '__main__':
         }
         torch.save(checkpoint, f"{args.trained_models}/last_model.pt")
         if accuracy > best_acc:
+            best_acc = accuracy
             checkpoint = {
-                # "epoch": epoch + 1,
                 "best_acc": best_acc,
                 "model": model.state_dict(),
-                # "optimizer": optimizer.state_dict()
             }
             torch.save(checkpoint, f"{args.trained_models}/best_model.pt")
-            best_acc = accuracy
 
 
 
