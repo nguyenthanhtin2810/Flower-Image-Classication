@@ -5,14 +5,14 @@
 
 
 ## Introduction
-This project is an implementation of a simple Convolutional Neural Network (CNN) for classifying 10 different types of flowers.
+This project focuses on training a Convolutional Neural Network (CNN) model using the PyTorch framework to classifying of 10 different types of flowers. The model is based on the pretrained ResNet50 architecture fine-tuned on a flower dataset and aims to achieve high accuracy in flower classification.
 
 <img src="test_image/predicted_Hydrangeas1.jpg" width="275" height="183"><img src="test_image/predicted_Tulips2.jpg" width="301" height="167">
 
 <img src="test_image/predicted_Orchids1.jpg" width="275" height="183"><img src="test_image/predicted_Daisies2.jpg" width="275" height="183">
 
 ## Data
-Data used for this project consists of images of 10 different types of flowers. You can find it at <a href="https://www.kaggle.com/datasets/aksha05/flower-image-dataset">this link</a>
+Data used for this project consists of images of 10 different types of flowers. You can find it at <a href="https://www.kaggle.com/datasets/aksha05/flower-image-dataset">this link</a>.
 
 ### Categories
 |||
@@ -23,10 +23,10 @@ Data used for this project consists of images of 10 different types of flowers. 
 |Hydrangeas|Hibiscus|
 |Lilies|Bougainvillea|
 
-I have processed that data so that it can be used for model training in **dataset.py**
+I have processed that data so that it can be used for model training in **dataset.py**.
 
 ## Model
-I use a simple CNN architecture for image classification. The model architecture is defined in the **models.py** file.
+The model architecture is defined in the **models.py** file. It uses a pretrained ResNet-50 backbone with the final fully connected layer replaced to match the number of flower classes.
 
 ## Training
 You can train the model by running the following command:
@@ -35,13 +35,21 @@ python train.py -r path/to/flower/dataset
 ```
 Replace path/to/flower/dataset with the path to your flower dataset.
 
-After training, the model's accuracy on the test set will be displayed, and the best model (**best_model.pt**) will be saved in the **trained_models** directory.
+You can specify additional training parameters such as the number of epochs, batch size, and image size, ...
+
+After each epoch, the best model and the last model and will be saved in the **trained_models**.
+
+If you pause the training process, you can resume it from the previous checkpoint by running the following command:
+
+```
+python train.py -c trained_models/last_model.pt
+```
 
 ## Trained Models
 You can find trained models I have trained in <a href="https://drive.google.com/drive/folders/12zUspjpC2t8SNh4J9NLfrtcVFPCkItJm?usp=sharing">this link</a>
 
 ## Experiments
-I trained the model for 100 epochs and the best model of arccuracy is **0.8027210884353742**
+I trained the model for 50 epochs and the best model of arccuracy is **0.9455782312925171**.
 
 Loss/iteration during training & Accuracy/epoch during validation
 <img src="tensorboard/tensorboard_screenshot.PNG" width="993.6" height="689.6">
@@ -49,7 +57,7 @@ Loss/iteration during training & Accuracy/epoch during validation
 ## Testing
 You can test the model with images in **test_image** by running the following command:
 ```
-python test.py -p path/to/test/image
+python test.py -p path/to/test/image -c trained_models/best_model.pt
 ```
 Replace path/to/test/image with the path to your test image.
 ### Result
