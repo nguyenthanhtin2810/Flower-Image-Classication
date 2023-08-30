@@ -46,7 +46,7 @@ python train.py -c trained_models/last_model.pt
 ```
 
 ## Trained Models
-You can find trained models I have trained in <a href="https://drive.google.com/drive/folders/12zUspjpC2t8SNh4J9NLfrtcVFPCkItJm?usp=sharing">this link</a>
+You can find trained models I have trained in <a href="https://drive.google.com/drive/folders/1TE0VXANKqDsXVlNqw-nPuqGA4zvLu-3-?usp=sharing">this link</a>
 
 ## Experiments
 I trained the model for 50 epochs and the best model of arccuracy is **0.9455782312925171**.
