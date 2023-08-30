@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-from models import SimpleCNN
+from models import PretrainResNet50
 import torch
 import torch.nn.functional as F
 from PIL import Image, ImageDraw, ImageFont
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     else:
         device = torch.device("cpu")
 
-    model = SimpleCNN(num_classes=10).to(device)
+    model = PretrainResNet50(num_classes=10).to(device)
     if args.checkpoint:
         checkpoint = torch.load(args.checkpoint)
         model.load_state_dict(checkpoint["model"])
@@ -69,6 +69,7 @@ if __name__ == '__main__':
 
     draw.text((x, y), text=text, font=font, fill=text_color)
 
-    image_filename = args.image_path.split("\\")[2]
-    ori_image.save(f"test_image/predicted_{image_filename}")
+    # image_filename = args.image_path.split("\\")[2]
+    # ori_image.save(f"test_image/predicted_{image_filename}")
+    
     ori_image.show()
