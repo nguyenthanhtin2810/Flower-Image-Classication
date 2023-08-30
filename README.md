@@ -52,7 +52,7 @@ You can find trained models I have trained in <a href="https://drive.google.com/
 I trained the model for 50 epochs and the best model of arccuracy is **0.9455782312925171**.
 
 Loss/iteration during training & Accuracy/epoch during validation
-<img src="tensorboard/tensorboard_screenshot.PNG" width="993.6" height="689.6">
+<img src="tensorboard/Screenshot.jpg" width="993.6" height="689.6">
 
 ## Testing
 You can test the model with images in **test_image** by running the following command:
