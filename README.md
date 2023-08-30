@@ -41,7 +41,7 @@ After training, the model's accuracy on the test set will be displayed, and the 
 You can find trained models I have trained in <a href="https://drive.google.com/drive/folders/12zUspjpC2t8SNh4J9NLfrtcVFPCkItJm?usp=sharing">this link</a>
 
 ## Experiments
-I trained the model for 100 epochs an the best model of arccuracy is **0.8027210884353742**
+I trained the model for 100 epochs and the best model of arccuracy is **0.8027210884353742**
 
 Loss/iteration during training & Accuracy/epoch during validation
 <img src="tensorboard/tensorboard_screenshot.PNG" width="993.6" height="689.6">
